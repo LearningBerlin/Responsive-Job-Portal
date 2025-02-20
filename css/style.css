@@ -165,7 +165,13 @@ section {
     background-color: var(--white);
     padding: 1rem .5rem;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: .2s linear;
   }
+
+  .header .flex .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  
 
   .header .flex .navbar a {
     display: block;
