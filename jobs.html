@@ -167,14 +167,17 @@
    <script src="js/script.js"></script>
 
    <script>
-    let dropdown_items = document.querySelector('.job-filter form .dropdown-container .dropdown .lists .items');
+    let dropdown_items = document.querySelectorAll('.job-filter form .dropdown-container .dropdown .lists .items');
+
     dropdown_items.forEach(items => {
-      items.onclick = () => {
-        items_parent = items.parentElement.parentElement;
-        let output =  items_parent.querySelectorAll('.output');
-        output.value = items.innerText;
-      }
-    });
+    items.onclick = () => {
+    let items_parent = items.parentElement.parentElement;
+    let output = items_parent.querySelector('.output'); // use querySelector, not querySelectorAll
+    if (output) {
+      output.value = items.innerText;
+    }
+  };
+});
    </script>
  </body>
 </html>
